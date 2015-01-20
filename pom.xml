@@ -88,6 +88,21 @@
 				<version>${maven-war-plugin.version}</version>
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+              				<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<useUniqueVersions>true</useUniqueVersions>
+						</manifest>
+						<manifestSection>
+							<name>Mode</name>
+							<manifestEntries>
+								<id>Developement</id>
+							</manifestEntries>
+						</manifestSection>
+					</archive>
 				</configuration>
 			</plugin>
 
