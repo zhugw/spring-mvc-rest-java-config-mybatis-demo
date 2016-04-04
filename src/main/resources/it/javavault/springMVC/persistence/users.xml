@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="it.javavault.springMVC.persistence.UsersMapper">
+
+	<select id="getUserDetailById" resultType="HashMap"
+		parameterType="map">
+		SELECT
+		EMAIL , PASSWORD
+		FROM
+		users
+		WHERE
+		USERID = #{userid} AND
+		USERNAME = #{username} AND
+		NICKNAME = #{nickname}
+	</select>
+
+	<update id="updateUserDetailsById" parameterType="map">
+		UPDATE
+		users
+		SET
+		NICKNAME = #{nickname},
+		<if test="email != null">
+			EMAIL = #{email}
+		</if>
+		WHERE
+		USERID = #{userid}
+	</update>
+</mapper>
