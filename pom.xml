@@ -1,16 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>it.javavault</groupId>
-  <artifactId>spring-mvc-java-config</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-  <name>Spring MVC Java Config</name>
-  <description>A Spring MVC app built only with java configuration</description>
-  <organization>
-  	<name>Java Vault</name>
-  	<url>http://www.javavault.it</url>
-  </organization>
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>it.javavault</groupId>
+	<artifactId>spring-mvc-java-config</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Spring MVC Java Config</name>
+	<description>A Spring MVC app built only with java configuration</description>
+	<organization>
+		<name>Java Vault</name>
+		<url>http://www.javavault.it</url>
+	</organization>
+	<dependencies>
 
 		<!-- Spring -->
 
@@ -59,6 +60,45 @@
 			<version>1.2.17</version>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!-- -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${org.mybatis.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>${org.mybatis-spring.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework.version}</version>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>1.6</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson-2-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -91,7 +131,7 @@
 					<archive>
 						<manifest>
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-              				<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
 							<useUniqueVersions>true</useUniqueVersions>
@@ -127,7 +167,7 @@
 				<configuration>
 					<charset>UTF-8</charset>
 					<port>8070</port>
-					<path>/${project.build.finalName}</path>
+					<path>/</path>
 				</configuration>
 			</plugin>
 
@@ -148,7 +188,11 @@
 		<maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
 		<tomcat7-maven-plugin.version>2.2</tomcat7-maven-plugin.version>
 
-
+		<!-- -->
+		<org.mybatis.version>3.2.8</org.mybatis.version>
+		<org.mybatis-spring.version>1.2.2</org.mybatis-spring.version>
+		<jackson-2-version>2.4.4</jackson-2-version>
+        <mysql.version>5.1.31</mysql.version>
 	</properties>
-  
+
 </project>
