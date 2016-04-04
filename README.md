@@ -1,7 +1,7 @@
 # spring-mvc-rest-java-config-mybatis-demo
 spring mvc 纯代码配置， 结合使用mybatis一个例子
 
-#2准备工作
+###准备工作
 
 **初始化sql**
 
@@ -41,7 +41,8 @@ INSERT INTO users (USERID,USERNAME,PASSWORD,NICKNAME,EMAIL) VALUES (md5(7),'user
 `mvn tomcat7:run`
 
 演示查询所有用户
-curl   'http://localhost:8070/users'
+
+`curl 'http://localhost:8070/users'`
 
 注： 端口配置见`pom.xml`
 
