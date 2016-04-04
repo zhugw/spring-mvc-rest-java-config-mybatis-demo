@@ -1,8 +1,11 @@
 # spring-mvc-rest-java-config-mybatis-demo
 spring mvc 纯代码配置， 结合使用mybatis一个例子
 
-准备工作：
+#2准备工作
+
 **初始化sql**
+
+```
 CREATE TABLE users (
   id int primary key auto_increment, 
   userid VARCHAR(32) NOT NULL, 
@@ -22,6 +25,7 @@ INSERT INTO users (USERID,USERNAME,PASSWORD,NICKNAME,EMAIL) VALUES (md5(4),'user
 INSERT INTO users (USERID,USERNAME,PASSWORD,NICKNAME,EMAIL) VALUES (md5(5),'user5','password5','UserNickname5','user5@test.com');
 INSERT INTO users (USERID,USERNAME,PASSWORD,NICKNAME,EMAIL) VALUES (md5(6),'user6','password6','UserNickname6','user6@test.com');
 INSERT INTO users (USERID,USERNAME,PASSWORD,NICKNAME,EMAIL) VALUES (md5(7),'user7','password7','UserNickname7','user7@test.com');
+```
 
 **`DataConfig`类中修改数据库配置**
 ```
@@ -36,7 +40,8 @@ INSERT INTO users (USERID,USERNAME,PASSWORD,NICKNAME,EMAIL) VALUES (md5(7),'user
 **启动工程**
 `mvn tomcat7:run`
 
-查询所有用户
+演示查询所有用户
 curl   'http://localhost:8070/users'
+
 注： 端口配置见`pom.xml`
 
